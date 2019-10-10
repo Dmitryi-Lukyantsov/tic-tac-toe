@@ -15,11 +15,6 @@ class TicTacToe {
 
         if (this.field[rowIndex][columnIndex] === null) {
             this.field[rowIndex][columnIndex] = this.playerSymbol;
-        }
-        if (game.getWinner() !== null) {
-            return this.playerSymbol
-        } else {
-
             this.playerSymbol === 'x' ? this.playerSymbol = 'o' : this.playerSymbol = 'x';
         }
         console.log(this.field);
@@ -27,7 +22,7 @@ class TicTacToe {
     }
 
     isFinished() {
-        if (this.win === true || this.isDraw()) return true;
+        if (this.win === true || this.isDraw() === true) return true;
         return false;
     }
 
@@ -68,7 +63,7 @@ class TicTacToe {
     }
 
     isDraw() {
-        if (this.getWinner() === null || this.noMoreTurns()) return true;
+        if (this.getWinner() === null || this.noMoreTurns() === true) return true;
         return false;
     }
 
